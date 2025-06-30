@@ -4,10 +4,10 @@ export const footer = () => {
             <p>&copy; 2023 Pâte et Papier - Chez Denise</p>
             <nav>
                 <ul>
-                    <li><a href="/accueil">Accueil</a></li>
-                    <li><a href="/produits">Produits</a></li>
-                    <li><a href="/connexion">Connexion</a></li>
-                    <li><a href="/panier">Panier</a></li>
+                    <li><a onclick="navigate('accueil')">Accueil</a></li>
+                    <li><a onclick="navigate('produits')">Produits</a></li>
+                    <li><a onclick="navigate('connexion')">Connexion</a></li>
+                    <li><a onclick="navigate('contact')">Contact</a></li>
                 </ul>
             </nav>
         </footer>

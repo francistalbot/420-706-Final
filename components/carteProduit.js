@@ -1,5 +1,6 @@
 export const carteProduit = () => {
-  return `
+  return ` 
+  <div class="produits-grid">
         <div class="carte-produit">
             <h4>Produit 1</h4>
             <p>Description du produit 1</p>
@@ -10,5 +11,6 @@ export const carteProduit = () => {
             <p>Description du produit 2</p>
             <span class="prix">40$</span>
         </div>
+    </div>
     `;
 };
