@@ -15,9 +15,9 @@ function renderCurrentView() {
     const viewName = routes[currentPath];
     
     if (viewName) {
-        loadView(viewName);
+        app.loadView(viewName);
     } else {
-        show404();
+        app.show404();
     }
 }
 
