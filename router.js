@@ -1,8 +1,8 @@
-const routes ={
-    '/': 'accueil',
-    '/produits': 'produits',
-    '/connexion': 'connexion',
-    '/contact': 'contact'
+const routes = {
+  "/": "accueil",
+  "/produits": "produits",
+  "/connexion": "connexion",
+  "/contact": "contact",
 };
 
 window.navigate = function (page) {
@@ -11,15 +11,15 @@ window.navigate = function (page) {
 };
 
 function renderCurrentView() {
-    const currentPath = location.pathname;
-    const viewName = routes[currentPath];
-    
-    if (viewName) {
-        app.loadView(viewName);
-    } else {
-        app.show404();
-    }
+  const currentPath = location.pathname;
+  const viewName = routes[currentPath];
+
+  if (viewName) {
+    app.loadView(viewName);
+  } else {
+    app.show404();
+  }
 }
 
-window.addEventListener('popstate', renderCurrentView);
-window.addEventListener('load', renderCurrentView);
+window.addEventListener("popstate", renderCurrentView);
+window.addEventListener("load", renderCurrentView);
