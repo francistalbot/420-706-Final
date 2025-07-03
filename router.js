@@ -1,3 +1,6 @@
+import { App } from "./app.js";
+const app = new App();
+
 const routes = {
   "/": "accueil",
   "/produits": "produits",
