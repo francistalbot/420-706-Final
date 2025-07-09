@@ -1,8 +1,9 @@
 import { App } from "./app.js";
 const app = new App();
+window.app = app;
 
 const routes = {
-  "/": "accueil",
+  "/": "accueil", //() => import "./controllers/accueilController.js";
   "/produits": "produits",
   "/connexion": "connexion",
   "/contact": "contact",
@@ -11,6 +12,7 @@ const routes = {
 window.navigate = function (page) {
   history.pushState({ page }, "", page === "accueil" ? "/" : "/" + page);
   renderCurrentView();
+  //constroler.render();
 };
 
 function renderCurrentView() {
@@ -24,5 +26,5 @@ function renderCurrentView() {
   }
 }
 
-window.addEventListener("popstate", renderCurrentView);
+window.addEventListener("popstate", renderCurrentView); // () => navigate(location.pathname.replace("/", "") || "accueil");
 window.addEventListener("load", renderCurrentView);
