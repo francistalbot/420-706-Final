@@ -1,9 +1,13 @@
-import { utilisateurManager } from "../app.js";
 import { UtilisateurModel } from "../models/utilisateurModel.js";
+import { panierModel } from "../models/panierModel.js";
+
+// Instance globale partagée
+const utilisateurManager = new UtilisateurModel();
+const panierManager = new panierModel();
+
 export const header = () => {
-  const utilisateurModel = new UtilisateurModel();
-  const currentUser = utilisateurModel.getUtilisateur();
-  const isLoggedIn = utilisateurModel.estConnecté();
+  const currentUser = utilisateurManager.getUtilisateur();
+  const isLoggedIn = utilisateurManager.estConnecté();
 
   return `
     <header> 
@@ -15,10 +19,12 @@ export const header = () => {
                 ${
                   isLoggedIn
                     ? `<li><span>Bonjour ${currentUser.nom}</span></li>
-                     <li><a onclick="handleDeconnexion()">Déconnexion</a></li>`
+                     <li><a onclick="app.handleDeconnexion()">Déconnexion</a></li>`
                     : `<li><a onclick="navigate('connexion')">Connexion</a></li>`
                 }
                 <li><a onclick="navigate('contact')">Contact</a></li>
+                <li><a onclick="app.viderPanier()">Panier (${panierManager.afficherNombreProduits()})
+                : ${panierManager.obtenirTotalPanier()} $ </a></li>
             </ul>
         </nav>
     </header>

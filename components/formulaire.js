@@ -1,6 +1,6 @@
 export const connexionForm = () => {
   return `
-    <form id="connexionForm">
+    <form id="connexionForm" onSubmit="app.handleConnexion(event)">
         <div class="form-group">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>

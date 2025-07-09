@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:3000/produits";
+const baseURL = "http://localhost:3000/utilisateurs";
 
 export class UtilisateurModel {
   async authentification(email, password) {

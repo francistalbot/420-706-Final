@@ -1,23 +1,48 @@
 import { UtilisateurModel } from "./models/utilisateurModel.js";
+import { panierModel } from "./models/panierModel.js";
+import { ProduitsModel } from "./models/produitsModel.js";
 
 // Instance globale partagée
-export const utilisateurManager = new UtilisateurModel();
+const utilisateurManager = new UtilisateurModel();
+const panierManager = new panierModel();
+const produitsManager = new ProduitsModel();
 
 export class App {
   constructor() {
-    this.setupGlobalEvents();
+    this.produits = [];
+    this.loadProduits();
   }
 
-  setupGlobalEvents() {
-    document.addEventListener("submit", (e) => {
-      if (e.target.id === "connexionForm") this.handleConnexion(e);
-    });
+  async loadProduits() {
+    try {
+      this.produits = await produitsManager.getProduits();
+      console.log("Produits chargés:", this.produits);
+    } catch (error) {
+      console.error("Erreur lors du chargement des produits:", error);
+    }
+  }
 
-    // Fonction globale pour la déconnexion
-    window.handleDeconnexion = () => {
-      utilisateurManager.logout();
-      navigate("accueil");
-    };
+  //Gestion du panier
+  async ajouterAuPanier(produitId) {
+    const produit = this.produits.find((p) => p.id === String(produitId));
+    if (!produit) {
+      alert("Produit introuvable !");
+      return;
+    }
+    panierManager.ajouterAuPanier(produit);
+    navigate("produits");
+  }
+
+  viderPanier() {
+    panierManager.viderPanier();
+    alert("Le panier a été vidé.");
+    navigate("produits");
+  }
+
+  //Gestion de l'utilisateur
+  handleDeconnexion() {
+    utilisateurManager.logout();
+    navigate("accueil");
   }
 
   async handleConnexion(e) {
@@ -29,7 +54,6 @@ export class App {
     console.log(result);
     if (result.success) {
       alert(`Bienvenue ${result.user.nom}`);
-      this.updateHeader(); // Mettre à jour le header
       navigate("accueil");
     } else {
       alert("Erreur de connexion");

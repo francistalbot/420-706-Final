@@ -4,7 +4,8 @@ export const carteProduit = (produit) => {
         <div class="carte-produit">
             <h4>${produit.nom}</h4>
             <p>${produit.description}</p>
-            <span class="prix">${produit.prix}</span>
+            <p class="prix">${produit.prix} $</p>
+            <button class="ajouter-panier" onclick="app.ajouterAuPanier(${produit.id})">Ajouter au panier</button>
         </div>
     </div>
     `;

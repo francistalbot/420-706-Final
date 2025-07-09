@@ -25,9 +25,9 @@
     "utilisateurs": [
         {
             "id": 1,
-            "nom": "Alice",
-            "email": "alice@alice.ca",
-            "password": "password123"
+            "nom": "Francis",
+            "email": "francis@email",
+            "password": "123"
         }
     ]
 }

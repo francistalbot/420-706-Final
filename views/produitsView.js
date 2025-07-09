@@ -4,7 +4,7 @@ import { carteProduit } from "../components/carteProduit.js";
 
 export const produitsView = (produits) => {
   return `
-    <div class="contact">
+    <div class="produits">
         ${header()}
         <main>
             <section class="produits">
