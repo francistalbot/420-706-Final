@@ -16,18 +16,19 @@ export const connexionForm = () => {
 
 export const contactForm = () => {
   return `
-    <form id="contactForm">
+    <form id="contactForm" onSubmit="app.handleContact(event)" novalidate>
+        <ul id="message" class="hidden"></ul>
         <div class="form-group">
-            <label for="name">Nom:</label>
-            <input type="text" id="name" name="name" required>
+            <label for="nom">Nom:</label>
+            <input type="text" id="nom" name="nom" required>
         </div>
         <div class="form-group">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>   
         </div>
         <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>  
+            <label for="text">Message:</label>
+            <textarea id="text" name="text" required></textarea>  
         </div>
         <button type="submit">Envoyer</button>
     </form>

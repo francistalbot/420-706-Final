@@ -7,7 +7,7 @@ export const contactView = () => {
     <div class="contact">
         ${header()}
         <main>
-            <section class="contact">
+            <section class="contact-form">
                 <h2>Contactez-nous</h2>
                 ${contactForm()}
             </section>
