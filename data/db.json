@@ -1,25 +1,34 @@
 {
     "produits": [
         {
-            "id": 1,
-            "nom": "Produit A",
-            "description": "Description du produit A",
-            "prix": 19.99,
-            "disponible": true
+            "id": 4,
+            "nom": "Papier artisanal marbré",
+            "description": "Feuille de papier fait main, motif marbré, idéale pour scrapbooking et reliure.",
+            "prix": 4.50
         },
         {
-            "id": 2,
-            "nom": "Produit B",
-            "description": "Description du produit B",
-            "prix": 29.99,
-            "disponible": false
+            "id": 5,
+            "nom": "Pâtes fraîches tagliatelles",
+            "description": "Pâtes alimentaires fraîches, recette italienne traditionnelle, 250g.",
+            "prix": 6.99
         },
         {
-            "id": 3,
-            "nom": "Produit C",
-            "description": "Description du produit C",
-            "prix": 39.99,
-            "disponible": true
+            "id": 6,
+            "nom": "Carnet relié à la main",
+            "description": "Carnet de notes, couverture en papier artisanal, 80 pages.",
+            "prix": 12.00
+        },
+        {
+            "id": 7,
+            "nom": "Papier aquarelle 300g",
+            "description": "Bloc de 20 feuilles, papier épais pour aquarelle, grain fin.",
+            "prix": 9.50
+        },
+        {
+            "id": 8,
+            "nom": "Pâtes orecchiette artisanales",
+            "description": "Pâtes sèches typiques des Pouilles, 500g.",
+            "prix": 5.75
         }
     ],
     "utilisateurs": [

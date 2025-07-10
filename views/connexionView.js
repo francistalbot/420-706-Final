@@ -4,13 +4,15 @@ import { connexionForm } from "../components/formulaire.js";
 
 export const connexionView = () => {
   return `
-    <div class="connexion">
+    <div class="container">
         ${header()}
         <main>
-            <section class="connexion-form">
-                <h2>Connexion</h2>
-                ${connexionForm()}
-            </section>
+            <div class="connexion-form">
+                <section class="form-container">
+                    <h2>Connexion</h2>
+                    ${connexionForm()}
+                </section>
+            </div>
         </main>
         ${footer()}
     </div>

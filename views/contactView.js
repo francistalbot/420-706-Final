@@ -4,13 +4,15 @@ import { contactForm } from "../components/formulaire.js";
 
 export const contactView = () => {
   return `
-    <div class="contact">
+    <div class="container">
         ${header()}
         <main>
-            <section class="contact-form">
-                <h2>Contactez-nous</h2>
-                ${contactForm()}
-            </section>
+            <div class="contact-form">
+                <section class=" form-container">
+                    <h2>Contactez-nous</h2>
+                    ${contactForm()}
+                </section>
+            </div>
         </main>
         ${footer()}
     </div>

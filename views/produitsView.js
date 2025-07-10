@@ -4,15 +4,19 @@ import { carteProduit } from "../components/carteProduit.js";
 
 export const produitsView = (produits) => {
   return `
-    <div class="produits">
+    <div class="container">
         ${header()}
         <main>
-            <section class="produits">
-                <h2>Produits</h2>
-                <div class="produits-grid">
-                    ${produits.map((produit) => carteProduit(produit)).join("")}
-                </div>
-            </section>
+            <div class="produits-view">
+                <section class="produits">
+                    <h2>Produits</h2>
+                    <div class="produits-grid">
+                        ${produits
+                          .map((produit) => carteProduit(produit))
+                          .join("")}
+                    </div>
+                </section>
+            </div>
         </main>
         ${footer()}
     </div>

@@ -16,13 +16,17 @@ export const header = () => {
             <ul>
                 <li><a onclick="navigate('accueil')">Accueil</a></li>
                 <li><a onclick="navigate('produits')">Produits</a></li>
-                ${
-                  isLoggedIn
-                    ? `<li><span>Bonjour ${currentUser.nom}</span></li>
-                     <li><a onclick="app.handleDeconnexion()">Déconnexion</a></li>`
-                    : `<li><a onclick="navigate('connexion')">Connexion</a></li>`
-                }
+                
                 <li><a onclick="navigate('contact')">Contact</a></li>
+                
+            </ul>
+            <ul>
+            ${
+              isLoggedIn
+                ? `<li><a>Bonjour ${currentUser.nom}</a></li>
+                     <li><a onclick="app.handleDeconnexion()">Déconnexion</a></li>`
+                : `<li><a onclick="navigate('connexion')">Connexion</a></li>`
+            }
                 <li><a onclick="app.viderPanier()">Panier (${panierManager.afficherNombreProduits()})
                 : ${panierManager.obtenirTotalPanier()} $ </a></li>
             </ul>
